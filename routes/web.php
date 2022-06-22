@@ -19,4 +19,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::get('/kelola-web', [App\Http\Controllers\KataController::class, 'index'])->name('kelola-web');
+    Route::post('/add/save', 'App\Http\Controllers\KataController@store');
+    Route::get('/edit/',  'App\Http\Controllers\KataController@edit');
+    Route::post('/update/',  'App\Http\Controllers\KataController@update');
+    Route::get('/hapus/', 'App\Http\Controllers\KataController@delete');
+    Route::post('/destroy/', 'App\Http\Controllers\KataController@destroy');
+});

@@ -65,19 +65,10 @@
                                     Login
                                 </button>
                             </div>
-
-                            <div class="mt-5 text-center">
-                                Don't have an account? <a href="auth-register.html">Create new one</a>
-                            </div>
                         </form>
 
                         <div class="text-center mt-5 text-small">
-                            Copyright &copy; Your Company. Made with 💙 by Stisla
-                            <div class="mt-2">
-                                <a href="#">Privacy Policy</a>
-                                <div class="bullet"></div>
-                                <a href="#">Terms of Service</a>
-                            </div>
+                            Copyright &copy; IMT. Made with 💙 by Student of State Polythecnic of Malang
                         </div>
                     </div>
                 </div>
