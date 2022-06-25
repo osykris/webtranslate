@@ -30,6 +30,8 @@ $("[data-checkboxes]").each(function() {
 
 $("#table-1").dataTable();
 
+  
+
 $('#add-data').click(function() {
   if ($("#form-data")[0].checkValidity()) {
     var formdata = new FormData(document.getElementById("form-data"));

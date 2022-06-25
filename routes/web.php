@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/search',[App\Http\Controllers\SearchController::class, 'search']);
+Route::get('/read',[App\Http\Controllers\SearchController::class, 'read']);
 
 Route::group(['middleware' => ['auth']], function () {
 

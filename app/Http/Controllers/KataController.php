@@ -107,18 +107,18 @@ class KataController extends Controller
         }
     }
 
-    public function cari(Request $request)
-    {
-        $kata = "hallo";
+    // public function cari(Request $request)
+    // {
+    //     $kata = "hallo";
 
-        $carikata = explode(' ', $kata);
+    //     $carikata = explode(' ', $kata);
 
-        $emp = Kata::where(function ($q) use ($carikata) {
-            foreach ($carikata as $value) {
-                $q->orWhere('kata', 'like', "%{$value}%");
-            }
-        })->select('kata')->get();
+    //     $emp = Kata::where(function ($q) use ($carikata) {
+    //         foreach ($carikata as $value) {
+    //             $q->orWhere('kata', 'like', "%{$value}%");
+    //         }
+    //     })->select('kata')->get();
 
-        dd($emp);
-    }
+    //     dd($emp);
+    // }
 }
