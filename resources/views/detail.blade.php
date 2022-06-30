@@ -68,7 +68,7 @@
                 <a class="nav-link" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Popular</a>
+                <a class="nav-link" href="/popular">Popular</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/word-of-the-day">Word Of The Day</a>
