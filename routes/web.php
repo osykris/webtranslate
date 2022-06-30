@@ -21,12 +21,11 @@ Auth::routes();
 
 Route::get('/search',[App\Http\Controllers\SearchController::class, 'search']);
 Route::get('/read',[App\Http\Controllers\SearchController::class, 'read']);
+Route::get('detail/{id}', [App\Http\Controllers\SearchController::class, 'detail']);
+Route::get('/word-of-the-day', [App\Http\Controllers\SearchController::class, 'word']);
 
 Route::group(['middleware' => ['auth']], function () {
-
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-    Route::get('/kelola-web', [App\Http\Controllers\KataController::class, 'index'])->name('kelola-web');
     Route::post('/add/save', 'App\Http\Controllers\KataController@store');
     Route::get('/edit/',  'App\Http\Controllers\KataController@edit');
     Route::post('/update/',  'App\Http\Controllers\KataController@update');

@@ -76,79 +76,23 @@
         </ul>
     </nav>
     <div class="limiter">
-        <div class="container-login100" style="background-image: url(assets/img/background.jpg);">
+        <div class="container-login100" style="background-image: url(../assets/img/background.jpg);">
             <div class="container">
-                <div class="row intro-text align-items-center">
-                    <div class="col-md-8 mb-4">
-                        <h3 style="color: white;">Indonesian Militer Terminology (Indonesian To English)</h3>
-                        <!-- <form class="form-inline mr-auto"> -->
-                        <div class="search-element">
-                            <input class="form-control" name="search" id="search" type="text"
-                                placeholder="Search" aria-label="Search" data-width="550">
-                            <!-- <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button> -->
-                        </div>
-                        <!-- </form> -->
-                        <br />
-                        <div class="table-responsive mt-4">
-                            <table class="table table-striped" style="border-color: white;">
-                                <thead>
-                                    <tr>
-                                        <th style="color: white;">Indonesian</th>
-                                        <th style="color: white;">English</th>
-                                        <th style="color: white;">More Information</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
+                <div class="row intro-text align-items-center justify-content-center">
+                    @foreach ($detail as $details)
+                    <div>
+                        <h1 style="color: white; font-weight: 600; font-size: 48px; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;"><strong>{{ $details->terminology }}</strong>
+                        </h1>
+                        <br>
+                        <h5 style="color: white;""> 
+                            {{ $details->deskripsi }}
+                        </h5><br>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-            $('#search').on('keyup', function() {
-                var strcari = $('#search').val();
-                if (strcari != "") {
-                    $.ajax({
-                        type: 'get',
-                        url: "/search",
-                        data: {
-                            'search': strcari
-                        },
-                        success: function(data) {
-                            $('tbody').html(data);
-                        }
-                    });
-                } else {
-                    readData()
-                }
-
-            });
-        });
-
-        function readData() {
-            $.get("{{ url('read') }}", {},
-                function(data, status) {
-                    $('tbody').html(data);
-                });
-        }
-    </script>
-
-    <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'csrftoken': '{{ csrf_token() }}'
-            }
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>

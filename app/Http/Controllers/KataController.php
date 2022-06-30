@@ -14,12 +14,6 @@ class KataController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(Request $request)
-    {
-        $katas = DB::table('katas')->get();
-        return view('admin.index', compact('katas'));
-    }
-
     public function store(Request $request)
     {
         DB::beginTransaction();
@@ -107,18 +101,4 @@ class KataController extends Controller
         }
     }
 
-    // public function cari(Request $request)
-    // {
-    //     $kata = "hallo";
-
-    //     $carikata = explode(' ', $kata);
-
-    //     $emp = Kata::where(function ($q) use ($carikata) {
-    //         foreach ($carikata as $value) {
-    //             $q->orWhere('kata', 'like', "%{$value}%");
-    //         }
-    //     })->select('kata')->get();
-
-    //     dd($emp);
-    // }
 }

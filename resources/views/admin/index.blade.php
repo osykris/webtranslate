@@ -10,10 +10,6 @@
                 Tambah Data  <i class="fas fa-plus"></i>
             </button>
         </div>
-        <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></div>
-            <div class="breadcrumb-item active"><a href="kelola-web">Data Kelola Web</a></div>
-        </div>
     </div>
 
     <div class="section-body">

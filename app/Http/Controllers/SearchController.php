@@ -19,7 +19,7 @@ class SearchController extends Controller
                     $output .= '<tr style="background-color: black;">' .
                         '<td style="color: white;">' . $product->kata . '</td>' .
                         '<td style="color: white;">' . $product->terminology . '</td>' .
-                        '<td style="color: white;">' . $product->deskripsi . '</td>' .
+                        '<td style="color: white;"><a class="btn btn-success" href="/detail/' . $product->id . '"> Click Here </a></td>' .
                         '</tr>';
                 }
             }else {
@@ -37,5 +37,15 @@ class SearchController extends Controller
     public function read(){
         $output = "";
         return Response($output);
+    }
+
+    public function detail($id){
+        $detail = DB::table('katas')->where('id', $id)->get();
+        return view('detail', compact('detail'));
+    }
+
+    public function word(){
+        $random = DB::table('katas')->get()->random(10);
+        return view('wordtoday', compact('random'));
     }
 }
