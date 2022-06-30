@@ -111,6 +111,9 @@
                         <h3 style="color: white;">Top Words</h3>
                         <br />
                         <div class="row">
+                            @if(@empty($populer))
+                            <h6 style="color: white;">data not available</h6>
+                            @else
                             @foreach ($populer as $pl)
                             <div class="col-md-4 mb-4">
                                     <div class="card st-card" style="background-image: url(assets/img/background.jpg);">
@@ -126,6 +129,7 @@
                                     </div>
                             </div>
                             @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>

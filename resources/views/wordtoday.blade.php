@@ -83,6 +83,9 @@
                         <h3 style="color: white;">Word Of The Day</h3>
                         <br />
                         <div class="row">
+                            @if(@empty($random))
+                            <h6 style="color: white;">data not available</h6>
+                            @else
                             @foreach ($random as $rd)
                             <div class="col-md-4 mb-4">
                                     <div class="card">
@@ -98,6 +101,7 @@
                                     </div>
                             </div>
                             @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
