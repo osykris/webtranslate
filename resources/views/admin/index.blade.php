@@ -26,6 +26,7 @@
                                         </th>
                                         <th>Kata</th>
                                         <th>Terminology</th>
+                                        <th>Gambar</th>
                                         <th>Deskripsi</th>
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -37,6 +38,7 @@
                                         <td class="text-center">{{ $no++ }}</td>
                                         <td>{{ $kata->kata }}</td>
                                         <td>{{ $kata->terminology }}</td>
+                                        <td><img src="{{ asset('img/'.$kata->gambar) }}" alt="" height="100"></td>
                                         <td>{{ $kata->deskripsi }}</td>
                                         <td class="text-center">
                                             <button class="btn btn-sm btn-white me-2" style="color: #009dfb;" onclick="edit('{{ $kata->id }}')" id="edit-data"><i class="fas fa-edit me-2"></i></button>
@@ -68,15 +70,19 @@
                 <form id="form-data">
                 <div class="form-group">
                         <label for="kata">Kata</label>
-                        <input type="text" class="form-control" placeholder="Masukkan Kata" name="kata" id="kata">
+                        <input type="text" class="form-control" placeholder="Masukkan Kata" name="kata" id="kata" required>
                     </div>
                     <div class="form-group">
                         <label for="terminology">Terminology</label>
-                        <input type="text" class="form-control" placeholder="Masukkan Terminology" name="terminology" id="terminology">
+                        <input type="text" class="form-control" placeholder="Masukkan Terminology" name="terminology" id="terminology" required>
                     </div>
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
-                        <input type="text" class="form-control" placeholder="Masukkan Deskripsi" name="deskripsi" id="deskripsi">
+                        <input type="text" class="form-control" placeholder="Masukkan Deskripsi" name="deskripsi" id="deskripsi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gambar">Gambar</label>
+                        <input type="file" class="form-control" placeholder="Masukkan Gambar" name="gambar" id="gambar" accept=".jpeg,.jpg,.png" required>
                     </div>
                 </form>
             </div>
@@ -112,6 +118,10 @@
                     <div class="form-group">
                         <label for="deskripsi_edit">Deskripsi</label>
                         <input type="text" class="form-control" placeholder="Masukkan Deskripsi" name="deskripsi_edit" id="deskripsi_edit">
+                    </div>
+                    <div class="form-group">
+                        <label for="gambar_edit">Gambar</label>
+                        <input type="file" class="form-control" placeholder="Masukkan Gambar" name="gambar_edit" id="gambar_edit" accept=".jpeg,.jpg,.png">
                     </div>
                 </form>
             </div>

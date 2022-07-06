@@ -78,6 +78,7 @@ function edit(id) {
       $('#id_edit').val(response.data.id);
       $('#kata_edit').val(response.data.kata);
       $('#terminology_edit').val(response.data.terminology);
+      $('#gambar_edit').val(response.data.gambar);
       $('#deskripsi_edit').val(response.data.deskripsi);
     },
   });

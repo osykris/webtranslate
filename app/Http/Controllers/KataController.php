@@ -18,9 +18,20 @@ class KataController extends Controller
     {
         DB::beginTransaction();
         try {
+            $this->validate($request, [
+				'gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
+			]);
+
+			//upload image
+			$gambar = $request->file('gambar');
+			$nama_gambar = $gambar->getClientOriginalName();
+			$path = "img";
+			$gambar->move($path, $nama_gambar);
+
             $store = Kata::create([
                 'kata' => $request->input('kata'),
                 'terminology' => $request->input('terminology'),
+                'gambar' => $nama_gambar,
                 'deskripsi' => $request->input('deskripsi'),
             ]);
 
@@ -55,6 +66,22 @@ class KataController extends Controller
     {
         try {
             $id = $request->input('id_edit');
+            if ($request->file('gambar_edit')) {
+                	//upload new image
+				$gambar = $request->file('gambar_edit');
+				$nama_gambar = $gambar->getClientOriginalName();
+				$path = "img";
+				$gambar->move($path, $nama_gambar);
+
+            $data = [
+                'kata' => $request->input('kata_edit'),
+                'terminology' => $request->input('terminology_edit'),
+                'gambar' => $nama_gambar,
+                'deskripsi' => $request->input('deskripsi_edit'),
+            ];
+
+            Kata::where('id', $id)->update($data);
+        } else {
             $data = [
                 'kata' => $request->input('kata_edit'),
                 'terminology' => $request->input('terminology_edit'),
@@ -62,6 +89,7 @@ class KataController extends Controller
             ];
 
             Kata::where('id', $id)->update($data);
+        }
 
             return response()->json([
                 'data' => $data,

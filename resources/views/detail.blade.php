@@ -84,6 +84,7 @@
                         <h1 style="color: white; font-weight: 600; font-size: 48px; font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;"><strong>{{ $details->terminology }}</strong>
                         </h1>
                         <br>
+                        <img class="mb-4" src="{{ asset('img/'.$details->gambar) }}" alt="" width="300px">
                         <h5 style="color: white;""> 
                             {{ $details->deskripsi }}
                         </h5><br>
