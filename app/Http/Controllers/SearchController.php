@@ -57,7 +57,7 @@ class SearchController extends Controller
     }
 
     public function word(){
-        $random = DB::table('katas')->get()->random(10);
+        $random = DB::table('katas')->get()->random(5);
         return view('wordtoday', compact('random'));
     }
 
