@@ -55,7 +55,7 @@ $('#add-data').click(function() {
     });
 
   } else {
-    $("#form-sampah")[0].reportValidity();
+    $("#form-data")[0].reportValidity();
   }
 });
 
@@ -149,6 +149,29 @@ function del_data_data(id) {
           $('#ModalHapusData').modal('hide');
           // remove card data
 
+      },
+  });
+}
+
+function gambar(id) {
+  $("#gambar-src").remove();
+  $.ajax({
+      type: "GET",
+      url: "/marker",
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      data: {
+          id: id
+      },
+      success: function(response) {
+          console.log(response);
+          // show modal
+          $('#modalMarker').modal('show');
+
+          // fill form in modal
+          var html = `<img src="/img/`+ response.data.gambar +`" alt="" width="100%" id="gambar-src">`;
+          $('#bukti').append(html);
       },
   });
 }
