@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Kata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
@@ -74,5 +75,17 @@ class SearchController extends Controller
         } else {
             return $result;
         }
+    }
+
+    public function word()
+    {
+        $random = DB::table('katas')->get()->random(10)->toJson(JSON_PRETTY_PRINT);
+        return response($random, 200);
+    }
+
+    public function populer()
+    {
+        $populer = DB::table('katas')->orderBy('count', 'DESC')->limit(3)->get()->toJson(JSON_PRETTY_PRINT);
+        return response($populer, 200);
     }
 }
