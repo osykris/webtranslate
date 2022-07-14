@@ -57,12 +57,27 @@ class SearchController extends Controller
     }
 
     public function word(){
-        $random = DB::table('katas')->get()->random(10);
+        $random = DB::table('katas')->get()->random(5);
         return view('wordtoday', compact('random'));
     }
 
     public function populer(){
         $populer = DB::table('katas')->orderBy('count', 'DESC')->limit(3)->get();
         return view('populer', compact('populer'));
+    }
+
+    public function gambar(Request $request)
+    {
+        try {
+            $id = $request->input('id');
+            $penarikan = Kata::where('id', $id)->first();
+
+            return response()->json([
+                'data' => $penarikan,
+                'message' => 'Get Data',
+            ], 200);
+        } catch (\Throwable $th) {
+            return $th;
+        }
     }
 }

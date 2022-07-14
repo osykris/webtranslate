@@ -24,6 +24,7 @@ Route::get('/read',[App\Http\Controllers\SearchController::class, 'read']);
 Route::get('detail/{id}', [App\Http\Controllers\SearchController::class, 'detail']);
 Route::get('/word-of-the-day', [App\Http\Controllers\SearchController::class, 'word']);
 Route::get('/popular', [App\Http\Controllers\SearchController::class, 'populer']);
+Route::get('/marker/',  [App\Http\Controllers\SearchController::class, 'gambar']);
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
