@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::resource('katas', App\Http\Controllers\API\SearchController::class);
+Route::get('search/{name}', [SearchController::class, 'search']);
+
+Route::fallback(function () {
+    return response()->json(['error' => 'Wrong route. Check again!'], 404);
 });

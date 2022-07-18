@@ -50,7 +50,7 @@ class SearchController extends Controller
                 $data = [
                     'count' => $jml_baru,
                 ];
-    
+
             Kata::where('id', $id)->update($data);
         }
         return view('detail', compact('detail'));
