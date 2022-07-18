@@ -28,6 +28,8 @@
                                         <th>Terminology</th>
                                         <th>Gambar</th>
                                         <th>Deskripsi</th>
+                                         <th>Deskripsi Indonesia</th>
+                                         <th>Link Marker</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -40,6 +42,8 @@
                                         <td>{{ $kata->terminology }}</td>
                                         <td><img src="{{ asset('img/'.$kata->gambar) }}" alt="" height="100"></td>
                                         <td>{{ $kata->deskripsi }}</td>
+                                        <td>{{ $kata->deskripsi_indo }}</td>
+                                        <td>{{ $kata->link }}</td>
                                         <td class="text-center">
                                             <button class="btn btn-sm btn-white me-2" style="color: #009dfb;" onclick="edit('{{ $kata->id }}')" id="edit-data"><i class="fas fa-edit me-2"></i></button>
                                             <button class="btn btn-sm btn-white me-2" style="color: #E70B0B" onclick="hapus_data('{{ $kata->id }}')"><i class='fas fa-times'></i></button>
@@ -58,7 +62,7 @@
 
 <!-- Modal Tambah Data -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" id="exampleModal">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Tambah Data</h5>
@@ -81,6 +85,14 @@
                         <input type="text" class="form-control" placeholder="Masukkan Deskripsi" name="deskripsi" id="deskripsi" required>
                     </div>
                     <div class="form-group">
+                        <label for="deskripsi_indo">Deskripsi Indonesia</label>
+                        <input type="text" class="form-control" placeholder="Masukkan Deskripsi Indonesia" name="deskripsi_indo" id="deskripsi_indo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="link">Link</label>
+                        <input type="text" class="form-control" placeholder="Masukkan Link" name="link" id="link" required>
+                    </div>
+                    <div class="form-group">
                         <label for="gambar">Gambar</label>
                         <input type="file" class="form-control" placeholder="Masukkan Gambar" name="gambar" id="gambar" accept=".jpeg,.jpg,.png" required>
                     </div>
@@ -96,7 +108,7 @@
 
 <!-- Modal Update Data -->
 <div class="modal fade" id="ModalDataUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Edit Data</h5>
@@ -118,6 +130,14 @@
                     <div class="form-group">
                         <label for="deskripsi_edit">Deskripsi</label>
                         <input type="text" class="form-control" placeholder="Masukkan Deskripsi" name="deskripsi_edit" id="deskripsi_edit">
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi_indo_edit">Deskripsi Indonesia</label>
+                        <input type="text" class="form-control" placeholder="Masukkan Deskripsi Indonesia" name="deskripsi_indo_edit" id="deskripsi_indo_edit" >
+                    </div>
+                    <div class="form-group">
+                        <label for="link_edit">Link</label>
+                        <input type="text" class="form-control" placeholder="Masukkan Link" name="link_edit" id="link_edit" >
                     </div>
                     <div class="form-group">
                         <label for="gambar_edit">Gambar</label>

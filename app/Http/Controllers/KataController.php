@@ -33,6 +33,8 @@ class KataController extends Controller
                 'terminology' => $request->input('terminology'),
                 'gambar' => $nama_gambar,
                 'deskripsi' => $request->input('deskripsi'),
+                'deskripsi_indo' => $request->input('deskripsi_indo'),
+                'link' => $request->input('link'),
             ]);
 
             DB::commit();
@@ -78,6 +80,8 @@ class KataController extends Controller
                 'terminology' => $request->input('terminology_edit'),
                 'gambar' => $nama_gambar,
                 'deskripsi' => $request->input('deskripsi_edit'),
+                'deskripsi_indo' => $request->input('deskripsi_indo_edit'),
+                'link' => $request->input('link_edit'),
             ];
 
             Kata::where('id', $id)->update($data);
@@ -86,6 +90,8 @@ class KataController extends Controller
                 'kata' => $request->input('kata_edit'),
                 'terminology' => $request->input('terminology_edit'),
                 'deskripsi' => $request->input('deskripsi_edit'),
+                'deskripsi_indo' => $request->input('deskripsi_indo_edit'),
+                'link' => $request->input('link_edit'),
             ];
 
             Kata::where('id', $id)->update($data);

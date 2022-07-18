@@ -78,8 +78,10 @@ function edit(id) {
       $('#id_edit').val(response.data.id);
       $('#kata_edit').val(response.data.kata);
       $('#terminology_edit').val(response.data.terminology);
-      $('#gambar_edit').val(response.data.gambar);
       $('#deskripsi_edit').val(response.data.deskripsi);
+      $('#deskripsi_indo_edit').val(response.data.deskripsi_indo);
+      $('#link_edit').val(response.data.link);
+      $('#gambar_edit').val(response.data.gambar);
     },
   });
 }
@@ -103,7 +105,7 @@ $('#update-data').click(function() {
       }
     });
   } else {
-    $("#form-data")[0].reportValidity();
+    $("#form-data-update")[0].reportValidity();
   }
 });
 

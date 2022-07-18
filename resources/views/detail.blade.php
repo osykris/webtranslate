@@ -53,7 +53,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
@@ -78,7 +78,7 @@
     </nav>
     <div class="limiter">
         <div class="container-login100" style="background-image: url(../assets/img/background.jpg);">
-            <div class="container">
+            <div class="container mt-5">
                 <div class="row intro-text align-items-center justify-content-center">
                     @foreach ($detail as $details)
                         <div>
@@ -87,14 +87,29 @@
                                 <strong>{{ $details->terminology }}</strong>
                             </h1>
                             <br>
-                            <img class="mb-4" src="{{ asset('img/' . $details->gambar) }}" alt=""
-                                width="300px"><br>
                             <button onclick="gambar('{{ $details->id }}')"
                                 class="btn btn-icon icon-left btn-success mb-4"><i class="fas fa-check"></i>
                                 Marker</button>
-                            <h5 style="color: white;"">
-                                {{ $details->deskripsi }}
-                            </h5><br>
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6>English</h6>
+                                        <div class="card">
+                                            <div class="card-body" >
+                                                <p class="card-text">{{ $details->deskripsi}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h6>Indonesian</h6>
+                                        <div class="card">
+                                            <div class="card-body" >
+                                                <b>{{ $details->kata }}</b>
+                                                <p class="card-text">{{ $details->deskripsi_indo }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                           
                         </div>
                     @endforeach
                 </div>
