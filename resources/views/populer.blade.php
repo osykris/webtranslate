@@ -71,7 +71,7 @@
             z-index: 1;
         }
 
-        .st-card::before{
+        /* .st-card::before{
             content: "";
             display: block;
             position: absolute;
@@ -81,7 +81,7 @@
             top: 0;
             left: 0;
             background-color: rgba(0, 0, 0, 0.7);
-        }
+        } */
     </style>
 </head>
 
@@ -116,13 +116,13 @@
                             @else
                             @foreach ($populer as $pl)
                             <div class="col-md-4 mb-4">
-                                    <div class="card st-card" style="background-image: url(assets/img/background.jpg);">
-                                        <div class="card-header" style="color: white">
+                                    <div class="card">
+                                        <div class="card-header" style="color: rgb(0, 0, 0)">
                                             {{ $pl->kata }}
                                         </div>
                                         <div class="card-body">
-                                            <h5 class="card-title" style="color: white">{{ $pl->terminology }}</h5>
-                                            <p class="card-text" style="color: white">{{ $pl->deskripsi }}</p>
+                                            <h5 class="card-title" style="color: rgb(0, 0, 0)">{{ $pl->terminology }}</h5>
+                                            <p class="card-text" style="color: rgb(0, 0, 0)">{{ $pl->deskripsi }}</p>
                                             <a href="/detail/{{ $pl->id }}" class="btn btn-success">Go
                                                 somewhere</a>
                                         </div>

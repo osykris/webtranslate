@@ -30,7 +30,7 @@ $("[data-checkboxes]").each(function() {
 
 $("#table-1").dataTable();
 
-  
+
 
 $('#add-data').click(function() {
   if ($("#form-data")[0].checkValidity()) {
@@ -81,7 +81,8 @@ function edit(id) {
       $('#deskripsi_edit').val(response.data.deskripsi);
       $('#deskripsi_indo_edit').val(response.data.deskripsi_indo);
       $('#link_edit').val(response.data.link);
-      $('#gambar_edit').val(response.data.gambar);
+        $('#gambar_edit').val(response.data.gambar);
+        $('#kategori_edit').val(response.data.kategori);
     },
   });
 }

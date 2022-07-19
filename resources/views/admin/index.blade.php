@@ -30,6 +30,7 @@
                                         <th>Deskripsi</th>
                                          <th>Deskripsi Indonesia</th>
                                          <th>Link Marker</th>
+                                         <th>Kategori</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -44,6 +45,7 @@
                                         <td>{{ $kata->deskripsi }}</td>
                                         <td>{{ $kata->deskripsi_indo }}</td>
                                         <td>{{ $kata->link }}</td>
+                                        <td>{{ $kata->kategori }}</td>
                                         <td class="text-center">
                                             <button class="btn btn-sm btn-white me-2" style="color: #009dfb;" onclick="edit('{{ $kata->id }}')" id="edit-data"><i class="fas fa-edit me-2"></i></button>
                                             <button class="btn btn-sm btn-white me-2" style="color: #E70B0B" onclick="hapus_data('{{ $kata->id }}')"><i class='fas fa-times'></i></button>
@@ -91,6 +93,14 @@
                     <div class="form-group">
                         <label for="link">Link</label>
                         <input type="text" class="form-control" placeholder="Masukkan Link" name="link" id="link" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select" aria-label="Default select example" name="kategori" id="kategori">
+                            <option selected>Pilih Kategori</option>
+                            <option value="AU">AU</option>
+                            <option value="AD">AD</option>
+                            <option value="AL">AL</option>
+                          </select>
                     </div>
                     <div class="form-group">
                         <label for="gambar">Gambar</label>
@@ -142,6 +152,14 @@
                     <div class="form-group">
                         <label for="gambar_edit">Gambar</label>
                         <input type="file" class="form-control" placeholder="Masukkan Gambar" name="gambar_edit" id="gambar_edit" accept=".jpeg,.jpg,.png">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select" aria-label="Default select example" name="kategori_edit" id="kategori_edit">
+                            <option selected>Pilih Kategori</option>
+                            <option value="AU">AU</option>
+                            <option value="AD">AD</option>
+                            <option value="AL">AL</option>
+                          </select>
                     </div>
                 </form>
             </div>

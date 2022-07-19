@@ -89,12 +89,12 @@
                             @foreach ($random as $rd)
                             <div class="col-md-4 mb-4">
                                     <div class="card">
-                                        <div class="card-header">
+                                        <div class="card-header" style="color: black">
                                             {{ $rd->kata }}
                                         </div>
                                         <div class="card-body">
-                                            <h5 class="card-title">{{ $rd->terminology }}</h5>
-                                            <p class="card-text">{{ $rd->deskripsi }}</p>
+                                            <h5 class="card-title" style="color: black">{{ $rd->terminology }}</h5>
+                                            <p class="card-text" style="color: black">{{ $rd->deskripsi }}</p>
                                             <a href="/detail/{{ $rd->id }}" class="btn btn-success">Go
                                                 somewhere</a>
                                         </div>

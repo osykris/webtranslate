@@ -11,6 +11,6 @@ class Kata extends Model
     protected $table = 'katas';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'kata', 'terminology', 'deskripsi', 'gambar', 'deskripsi_indo', 'link'
+        'kata', 'terminology', 'deskripsi', 'gambar', 'deskripsi_indo', 'link', 'kategori'
     ];
 }
