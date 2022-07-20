@@ -16,10 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/search_au', function () {
+    return view('au');
+});
+Route::get('/search_ad', function () {
+    return view('ad');
+});
+Route::get('/search_al', function () {
+    return view('al');
+});
 Auth::routes();
 
 Route::get('/search',[App\Http\Controllers\SearchController::class, 'search']);
+Route::get('/au',[App\Http\Controllers\SearchController::class, 'search_au']);
+Route::get('/ad',[App\Http\Controllers\SearchController::class, 'search_ad']);
+Route::get('/al',[App\Http\Controllers\SearchController::class, 'search_al']);
 Route::get('/read',[App\Http\Controllers\SearchController::class, 'read']);
 Route::get('detail/{id}', [App\Http\Controllers\SearchController::class, 'detail']);
 Route::get('/word-of-the-day', [App\Http\Controllers\SearchController::class, 'word']);

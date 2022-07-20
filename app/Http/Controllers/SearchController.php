@@ -36,6 +36,90 @@ class SearchController extends Controller
         }
     }
 
+    public function search_au(Request $request)
+    {
+
+        if ($request->ajax()) {
+
+            $output = "";
+            $products = DB::table('katas')->where('kata', 'LIKE', '%' . $request->search . "%")->where('kategori', 'AU')->get();
+
+            if (count($products)>0) {
+                foreach ($products as $key => $product){
+                    $output .= '<tr style="background-color: black;">' .
+                        '<td style="color: white;">' . $product->kata . '</td>' .
+                        '<td style="color: white;">' . $product->terminology . '</td>' .
+                        '<td style="color: white;"><a class="btn btn-success" href="/detail/' . $product->id . '"> Click Here </a></td>' .
+                        '</tr>';
+                }
+            }else {
+                $output .= '<tr style="background-color: black;">' .
+                '<td style="color: white;">' .'No Data Found' . '</td>' .
+                '<td style="color: white;">' .'No Data Found' . '</td>' .
+                '<td style="color: white;">' .'No Data Found' . '</td>' .
+                '</tr>';
+            }
+
+            return Response($output);
+        }
+    }
+
+    public function search_ad(Request $request)
+    {
+
+        if ($request->ajax()) {
+
+            $output = "";
+            $products = DB::table('katas')->where('kata', 'LIKE', '%' . $request->search . "%")->where('kategori', 'AD')->get();
+
+            if (count($products)>0) {
+                foreach ($products as $key => $product){
+                    $output .= '<tr style="background-color: black;">' .
+                        '<td style="color: white;">' . $product->kata . '</td>' .
+                        '<td style="color: white;">' . $product->terminology . '</td>' .
+                        '<td style="color: white;"><a class="btn btn-success" href="/detail/' . $product->id . '"> Click Here </a></td>' .
+                        '</tr>';
+                }
+            }else {
+                $output .= '<tr style="background-color: black;">' .
+                '<td style="color: white;">' .'No Data Found' . '</td>' .
+                '<td style="color: white;">' .'No Data Found' . '</td>' .
+                '<td style="color: white;">' .'No Data Found' . '</td>' .
+                '</tr>';
+            }
+
+            return Response($output);
+        }
+    }
+
+    public function search_al(Request $request)
+    {
+
+        if ($request->ajax()) {
+
+            $output = "";
+            $products = DB::table('katas')->where('kata', 'LIKE', '%' . $request->search . "%")->where('kategori', 'AL')->get();
+
+            if (count($products)>0) {
+                foreach ($products as $key => $product){
+                    $output .= '<tr style="background-color: black;">' .
+                        '<td style="color: white;">' . $product->kata . '</td>' .
+                        '<td style="color: white;">' . $product->terminology . '</td>' .
+                        '<td style="color: white;"><a class="btn btn-success" href="/detail/' . $product->id . '"> Click Here </a></td>' .
+                        '</tr>';
+                }
+            }else {
+                $output .= '<tr style="background-color: black;">' .
+                '<td style="color: white;">' .'No Data Found' . '</td>' .
+                '<td style="color: white;">' .'No Data Found' . '</td>' .
+                '<td style="color: white;">' .'No Data Found' . '</td>' .
+                '</tr>';
+            }
+
+            return Response($output);
+        }
+    }
+
     public function read(){
         $output = "";
         return Response($output);

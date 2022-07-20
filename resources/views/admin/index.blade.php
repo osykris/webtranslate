@@ -96,7 +96,7 @@
                     </div>
                     <div class="form-group">
                         <select class="form-select" aria-label="Default select example" name="kategori" id="kategori">
-                            <option selected>Pilih Kategori</option>
+                            <option selected disabled>Pilih Kategori</option>
                             <option value="AU">AU</option>
                             <option value="AD">AD</option>
                             <option value="AL">AL</option>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="form-group">
                         <select class="form-select" aria-label="Default select example" name="kategori_edit" id="kategori_edit">
-                            <option selected>Pilih Kategori</option>
+                            <option selected disabled>Pilih Kategori</option>
                             <option value="AU">AU</option>
                             <option value="AD">AD</option>
                             <option value="AL">AL</option>

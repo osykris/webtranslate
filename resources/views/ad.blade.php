@@ -133,7 +133,7 @@
                 if (strcari != "") {
                     $.ajax({
                         type: 'get',
-                        url: "/search",
+                        url: "/ad",
                         data: {
                             'search': strcari
                         },
